@@ -23,4 +23,4 @@
 
 ### [] && .
 * 数组取值 arr[index],不止数组可以这样取值，当用"."去取某一个对象的属性时，我们可以用[]来代替.
-> var a ={name:xiao,age:20} var x = "name" ; console.log(a[x]+":"+a["age"])
+> var a ={name:"xiao",age:20} var x = "name" ; console.log(a[x]+":"+a["age"])
