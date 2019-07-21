@@ -4,7 +4,7 @@
 < **NaN一个特殊的Number,一个不是数字的数字类型T-T**
 * String
 * Boolean
- |能被转换为false的值|
+|能被转换为|false的值|
 |:--:|:--:|:--:|:--:|:--:|
 |undined|null|0|NaN|''|
 * undefined 用来存原始数据，暂时没赋值
