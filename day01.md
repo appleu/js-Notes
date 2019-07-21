@@ -4,7 +4,7 @@
 < **NaN一个特殊的Number,一个不是数字的数字类型T-T**
 * String
 * Boolean
-< |能被转换为false的值|
+ |能被转换为false的值|
 :--:|:--:|:--:|:--:|:--:
 undined|null|0|NaN|''
 * undefined 用来存原始数据，暂时没赋值
@@ -27,9 +27,9 @@ undined|null|0|NaN|''
 ### [] && .
 * 数组取值 arr[index],不止数组可以这样取值，当用"."去取某一个对象的属性时，我们可以用[]来代替.
 >
-  (```)
+  ```
     var a ={name:"xiao",age:20};
     var x = "name" ;
     console.log(a[x]+":"+a["age"]) //
     console["log"](a[x]+":"+a["age"]) // 都会输出 => xiao：20
-  (```)
+  ```
