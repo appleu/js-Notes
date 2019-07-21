@@ -4,6 +4,7 @@
 < *NaN一个特殊的Number,一个不是数字的数字类型T-T*
 * String
 * Boolean
+
 | 能被转换为false的值 | kk   |     |     |     |
 | ------------------- | ---- | --- | --- | --- |
 | undefined           | null | NaN | 0   | ''  |
