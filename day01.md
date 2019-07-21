@@ -5,8 +5,8 @@
 * String
 * Boolean
  |能被转换为false的值|
-:--:|:--:|:--:|:--:|:--:
-undined|null|0|NaN|''
+|:--:|:--:|:--:|:--:|:--:|
+|undined|null|0|NaN|''|
 * undefined 用来存原始数据，暂时没赋值
 * null 空指针，用来存对象的，只是暂时没有数据，typeof时是对象类型，但是他不是对象是null类型
 * Symbol ->es6   babeljs.cn （es6 => es5）
@@ -27,7 +27,7 @@ undined|null|0|NaN|''
 ### [] && .
 * 数组取值 arr[index],不止数组可以这样取值，当用"."去取某一个对象的属性时，我们可以用[]来代替.
 >
-  ```
+  ```javascript
     var a ={name:"xiao",age:20};
     var x = "name" ;
     console.log(a[x]+":"+a["age"]) //
