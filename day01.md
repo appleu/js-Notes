@@ -33,3 +33,8 @@
     console.log(a[x]+":"+a["age"]) //
     console["log"](a[x]+":"+a["age"]) // 都会输出 => xiao：20
   ```
+| name  | age | sex |
+| ----- | --- | --- |
+| test  | 19  | 0   |
+| test1 | 20  | 1   |
+| test2 | 30  | 1    |
