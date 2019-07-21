@@ -5,7 +5,7 @@
 * String
 * Boolean
 
-| 能被转换为false的值     |
+| 能被转换为false的值 |
 |:-------------------:|:----:|:---:|:---:|:---:|
 |      undefined      | null | NaN |  0  | ''  |
 * undefined 用来存原始数据，暂时没赋值
