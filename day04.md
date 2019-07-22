@@ -6,13 +6,21 @@
 >     }else{
 >         ....
 >     }
->     condition?true:false;
+>     condition?true:false;//只比=和，的运算级高，可代替判断，需要值的地方可以放三目
 >
 
 
 
 
 ### for
+
+>     
+>     
+>     for(int i=0;i<number;i++){
+>           循环体
+>     }
+>     //不支持markdown的流程图语法嘛，改了n次还是出不来T-T
+>
 ```
 flow
 st=>start: start
