@@ -1,4 +1,17 @@
 # 判断  逻辑运算  for
+### 判断  三目运算
+>
+>     if( condition ){
+>         ...
+>     }else{
+>         ....
+>     }
+>     condition?true:false;
+>
+
+
+
+
 ### for
 ```
 flow
