@@ -54,3 +54,6 @@ od = document.getElementsByClassName('info');
 > > ele.getAttribute()
 > > ele.setAttrbute（'',''） //可设置，也可添加
 > > ele.removeAtrribute()
+
+> 获取标签里的内容
+> > innerText/textContent(低firefox)  innerHTML  获取单标签input里的内容 inputEle.value
