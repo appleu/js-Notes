@@ -27,18 +27,17 @@
 >     行内样式
 ```javascript
 let oStyle = document.getElementById('css');
-
 oStyle.innerHTML = "#wrap{width:200px;height:60px;background-color:#f36;}";
 
 //或者,style里有某个类名样式，给获取的元素添加相关的className
-
 let oDiv = document.getElementById('wrap');
 oDiv.className = "info-div";  // class 是保留字，所有用className就是操作元素的class属性
 
 //操作(读写)合法的标签属性
 oDiv.title = "infomation"; // 类似的合法属性 比如 id class style
 console.log(oDiv.title);
-oDiv.style = "width:300px;height:100px;";// style是个对象，用+=并不能合并之前存在行内的style，style对象存储关于节点的所有行内(内联)样式，并不包含内部和外部样式
+oDiv.style = "width:300px;height:100px;";// style是个对象，用+=并不能合并之前存在行内的style，
+//style对象存储关于节点的所有行内(内联)样式，并不包含内部和外部样式
 
 oDiv.id = "modified";//虽然修改了id，但是通过id获取的元素只会获取一次，后面用oDiv还是代表原来的
 od = document.getElementsByClassName('info');
