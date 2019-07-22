@@ -14,8 +14,8 @@
   </html>
   ```
 * 写在单独的js文件里，通过标签<script src="path/fileName.js" ></script>来引用
-* 行内js代码，不推荐，测试临时用下可以 
-  ```
+* 行内js代码，不推荐，测试临时用下可以
+  ```HTML
     <div id="wrap" onclick="alert(111)"></div>
 
     <a href="javascript:;"></a>       
@@ -25,7 +25,7 @@
 < js操作css
 >     内部样式表
 >     行内样式
-```
+```javascript
 let oStyle = document.getElementById('css');
 
 oStyle.innerHTML = "#wrap{width:200px;height:60px;background-color:#f36;}";
