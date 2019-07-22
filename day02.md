@@ -52,5 +52,7 @@ od = document.getElementsByClassName('info');
 
 > 操作自定义属性,vue和bootstrap都是基于自定义属性做dom操作的
 > > ele.getAttribute()
-> > ele.setAttrbute（'',''） //可设置，也可添加
+
+> >ele.setAttrbute（'',''） //可设置，也可添加
+
 > > ele.removeAtrribute()
