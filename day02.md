@@ -2,7 +2,7 @@
 
 ### javascript可以写在哪里
 * head body的任何位置，不太复杂的页面，推荐写在body结束标签之前
-< ```javascript
+ ```html
   <html>
     <head></head>
     <body>
