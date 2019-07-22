@@ -25,6 +25,7 @@
 < js操作css
 >     内部样式表
 >     行内样式
+操作内部样式表：
 ```javascript
 let oStyle = document.getElementById('css');
 oStyle.innerHTML = "#wrap{width:200px;height:60px;background-color:#f36;}";
