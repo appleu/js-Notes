@@ -75,14 +75,14 @@ let condition = "垫底";
 >           循环体
 >     }
 >     // 关键词 break(可作用循环和switch)   continue(只作用于循环，跳过他后面的代码)
->     ```javascript
+>    
 >     aaa:for(let i = 0 ; i < 3 ; i++){
 >           for(let j = 0 ; j < 5; j++){
 >               break aaa;//能跳出嵌套循环，到aaa的位置
 >         }
 >        console.log("i = "+i+", j = "+ j);
 >    }
->     ```
+>     
 >     //不支持markdown的流程图语法嘛，改了n次还是出不来T-T
 >     几个简单的练习 ：倒三角 图片切换  循环切换   乘法表
 >
