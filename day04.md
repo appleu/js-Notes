@@ -29,6 +29,7 @@
 //注意元素的display有很多种状态，除了block还有inline-block
 oWrap.style.display = oWrap.style.display === "block" ? "none" : "block";
 //用三目，不用变量的话，需要给元素预先设置内联style="display:block;"否则第一次点不会隐藏
+//用三目，2>5 ? ( console.log(1),console.log(2),console.log(3) ) : ( ... ); 执行多个语句用()
 ```
 >多分支(全等)判断：switch  case  
 ```javascript
@@ -51,6 +52,15 @@ let condition = "垫底";
      alert("还没考试吗？");
  }
 ```
+
+### 逻辑运算 && || ！
+> 逻辑运算符的短路运算，代替if判断
+```javascript
+> let a = true;
+>  a && b();  //a为真b才执行，因为与运算，a为假时已经能确定逻辑运算的值
+>  // 后面不会再去运算，如果a为真时才有必要去运算，确定与运算的最终值
+>  a || b(); //  a为假b才执行，或运算，a为
+ ```
 
 
 ### for
