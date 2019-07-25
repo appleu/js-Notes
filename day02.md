@@ -24,9 +24,9 @@
 
 ### getElement获取元素
 * 静态方法
-> getElementById
+> getElementById  querySelectorAll(".aa")=>获取的是静态的 
 * 动态方法
-> getElementsByClassName
+> getElementsByClassName ByTagName  ByName  获取的元素类数组是动态的
 
 ### 操作元素属性 、 样式
 < js操作css
