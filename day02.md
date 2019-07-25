@@ -21,6 +21,13 @@
     <a href="javascript:;"></a>       
     <a href="javascript:void(0);"></a>   a标签不跳转
     ```
+
+### getElement获取元素
+* 静态方法
+> getElementById
+* 动态方法
+> getElementsByClassName
+
 ### 操作元素属性 、 样式
 < js操作css
 >     内部样式表
