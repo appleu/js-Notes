@@ -119,4 +119,4 @@ console.log(b);//es6 : not defined 报错 (es6比es5看起来符合逻辑一点)
 
 ```
 ### 可编辑按钮  星级评分  双层选项卡
-### 算法学习：LeetCode-cn[https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/]
+### 算法学习：[LeetCode-cn](https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/ "算法学习")
