@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+    html,body,div,p,ul{
+		margin:0;
+		padding:0;
+	}
+	#wrap{
+		width:700px;
+		height:80px;
+		margin:50px auto;
+		background-color:#009582;
+		user-select:none;
+	}
+	#wrap .title,#wrap .stars,#wrap .stars li,#wrap .txt{
+		float:left;
+	}
+	#wrap .title{
+		margin-left:6em;
+		line-height:80px;
+		font-size:16px;
+		font-weight:bolder;
+		color:#f36;
+	}
+	#wrap .stars{
+		margin-left:1em;
+		line-height:80px;
+	}
+	#wrap .stars li{
+		margin-top:23px;
+		padding:0px 10px;
+		height:26px;
+		line-height:26px;
+		list-style:none;
+		font-size:2em;
+		font-weight:bolder;
+		color:#fff;
+		cursor:pointer;
+		
+	}
+	#wrap .stars li.light{
+		color:#e04;
+	}
+	#wrap .txt{
+		margin-left:2em;
+		line-height:80px;
+		color:#eb1;
+	}
+  </style>
+ </head>
+ <body>
+  <div id="wrap">
+	<p class="title">
+		请评分 :
+	</p>
+  	<ul class="stars">
+  		<li >★</li>
+  		<li>★</li>
+  		<li>★</li>
+  		<li>★</li>
+  		<li>★</li>
+  	</ul>
+	<p class="txt">评分:请认真给文章评分！^ _ ^</p>
+  </div>
+  <script type="text/javascript">
+	~function(){
+		let aLi = document.querySelectorAll("#wrap .stars li"),
+			 oTxt = document.querySelector("#wrap .txt"),
+			 len = aLi.length,
+			 oUl = document.querySelector("#wrap .stars"),
+			 arrTxt = [
+				"评分:请认真给文章评分！^ _ ^",
+				"很差！！",
+				"差！",
+				"一般",
+				"不错",
+				"非常好，Very Good！！"
+			 ]
+			 index = -1;
+
+			 for(let i = 0 ; i < len ; i++){
+				aLi[i].onmouseenter = function(){
+					oTxt.innerHTML = arrTxt[i+1];
+					for(let j = 0 ; j < len ; j++){
+						aLi[j].className = j<=i?"light":"";
+						aLi[j].onclick = function(){//click的事件发生在enter事件里面，没有移入怎么点击
+							index = j;
+						}
+					}			
+				}
+			 }
+
+			oUl.onmouseleave = function(){
+					oTxt.innerHTML = arrTxt[index+1];
+					for(let j = 0; j < len ; j++){
+						aLi[j].className =  j <= index?"light":"";
+					}
+			 }
+			 
+
+	}()
+  </script>
+ </body>
+</html>
