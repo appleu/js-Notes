@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>triangle css</title>
+    <style>
+      body{
+        background-color: #e6e6e6;
+      }
+      #title{
+        position:relative;
+        float:left;
+        margin:0px auto;
+        width:130px;
+        height:40px;
+        background-color: #000;
+      }
+
+      #title::after{
+        position:absolute;
+        right:-10px;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:0;
+        height:0;
+        content:"";
+        border:10px solid rgba(0,0,0,0);
+        border-left-color:#009586;
+        /*border-top-color:#68c3ef;
+        border-bottom-color:#ffa;*/
+        border-right-color:#f36;
+        border-right:none;/*不起支撑作用的边框线可以去掉，起支撑作用的变透明色*/
+      }
+    </style>
+  </head>
+  <body>
+    <div id="title"></div>22
+  </body>
+</html>
