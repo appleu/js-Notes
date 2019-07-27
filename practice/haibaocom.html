@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	html,body,div,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6{
+		margin:0;
+		padding:0;
+	}
+	ul,ol{
+		list-style:none;
+	}
+
+	#wrap{
+		margin:50px auto;
+		width:1080px;
+		height:360px;
+	}
+	#wrap .nav{
+		width:100%;
+		height:40px;
+		line-height:40px;
+		text-align:center;
+		background-color:#e6e6e6;
+	}
+	
+	#wrap .nav p{
+		position:relative;
+		float:left;
+		margin-right:50px;
+		width:130px;
+		height:40px;
+		color:#fff;
+		background-color:#000;
+	}
+
+	#wrap .nav p::after{ /*TODO : 三角形*/
+		position:absolute;
+		content:"";
+		border:5px solid #f36;
+		border-right:none;
+	}
+	
+	#wrap .nav ul li{
+		position:relative;
+		float:left;
+		margin-right:30px;
+		cursor:pointer;
+		transition:color .3s;
+	}
+	#wrap .nav ul li.active{
+		color:#f36;
+	}
+	#wrap .nav ul li::after{
+		position:absolute;
+		left:0;
+		right:0;
+		bottom:0;
+		margin:auto;
+		content:"";
+		width:0%;
+		border-bottom:3px solid #f36;
+		transition:width .3s;
+	}
+
+	#wrap .nav ul li.active::after{
+		width:100%;
+	}
+
+	#wrap .content{
+		width:100%;
+	}
+	#wrap .content ul{
+		position:relative;
+		width:105%;
+		height:305px;
+		overflow:hidden;
+	}
+	
+	#wrap .content ul::after{/*TODO : 清楚浮动*/
+		content:"";
+		clear:both;
+	}
+
+	#wrap .content ul li{
+		position:absolute;
+		display:none;
+	}
+	#wrap .content ul li.show{
+		display:block;
+	}
+	#wrap .content ul li dl{
+		float:left;
+		margin:20px 30px 20px 0;
+		font-size:14px;
+	}
+
+	#wrap .content ul li dl dt{
+		line-height:24px;
+	}
+  </style>
+ </head>
+ <body>
+	<div id="wrap">
+		<div class="nav">
+			<p>独家精品策划</p>
+			<ul>
+				<li class="active">全部</li>
+				<li>剧好看</li>
+				<li>报尚名来</li>
+				<li>模范先生</li>
+				<li>报料</li>
+			</ul>
+		</div>
+		<div class="content">
+			<ul>
+				<li class="show">
+					<dl>
+						<dd>
+							<img src="images/img07.jpg" alt="" />
+							<dt>邓伦遇见Bally，一切如愿以偿</dt>
+						</dd>
+					</dl>
+					<dl>
+						<dd>
+							<img src="images/img04.jpg" alt="" />
+							<dt>靠衣品"花样逆袭"？其实私底下的蒋欣比你想象的更</dt>
+						</dd>
+					</dl>
+					<dl>
+						<dd>
+							<img src="images/img10.jpg" alt="" />
+							<dt>"鬼马精灵"周冬雨做客「报料」</dt>
+						</dd>
+					</dl>
+				</li>
+
+
+				<li >	<dl>
+						<dd>
+							<img src="images/img07.jpg" alt="" />
+							<dt>2邓伦遇见Bally，一切如愿以偿</dt>
+						</dd>
+					</dl>
+					<dl>
+						<dd>
+							<img src="images/img04.jpg" alt="" />
+							<dt>2靠衣品"花样逆袭"？其实私底下的蒋欣比你想象的更</dt>
+						</dd>
+					</dl>
+					<dl>
+						<dd>
+							<img src="images/img10.jpg" alt="" />
+							<dt>2"鬼马精灵"周冬雨做客「报料」</dt>
+						</dd>
+					</dl></li>
+				<li>22</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		~function(){
+			let navLis = document.querySelectorAll("#wrap .nav li");
+			let len = navLis.length;
+			let index = 0;
+			for( let i = 0 ; i < len ; i++ ){
+				navLis[i].onmouseenter = function(){
+					navLis[index].classList.remove("active");
+					index = i ;
+					this.classList.add("active");
+				}
+			}
+		}()
+	</script>
+ </body>
+</html>
