@@ -102,13 +102,20 @@
 		display:block;
 	}
 	#wrap .content ul li dl{
+		width:340px;
 		float:left;
 		margin:20px 30px 20px 0;
 		font-size:14px;
 	}
 
 	#wrap .content ul li dl dt{
+		display:inline-block;
+		width:100%;
+		height:24px;
 		line-height:24px;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		overflow:hidden;
 	}
   </style>
  </head>
@@ -127,7 +134,7 @@
 		<div class="content">
 			<ul>
 				<li class="show">
-					<dl>
+					<!--<dl>
 						<dd>
 							<img src="images/img07.jpg" alt="" />
 							<dt>邓伦遇见Bally，一切如愿以偿</dt>
@@ -144,37 +151,10 @@
 							<img src="images/img10.jpg" alt="" />
 							<dt>"鬼马精灵"周冬雨做客「报料」</dt>
 						</dd>
-					</dl>
+					</dl>-->
 				</li>
-
-
-				<li >	<dl>
-						<dd>
-							<img src="images/img07.jpg" alt="" />
-							<dt>2邓伦遇见Bally，一切如愿以偿</dt>
-						</dd>
-					</dl>
-					<dl>
-						<dd>
-							<img src="images/img04.jpg" alt="" />
-							<dt>2靠衣品"花样逆袭"？其实私底下的蒋欣比你想象的更</dt>
-						</dd>
-					</dl>
-					<dl>
-						<dd>
-							<img src="images/img10.jpg" alt="" />
-							<dt>2"鬼马精灵"周冬雨做客「报料」</dt>
-						</dd>
-					</dl></li>
-				<li>22</li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li ></li>
+				<li ></li>
 				<li></li>
 				<li></li>
 			</ul>
@@ -182,18 +162,133 @@
 	</div>
 
 	<script type="text/javascript">
-		~function(){
+		~function(datas){
 			let navLis = document.querySelectorAll("#wrap .nav li");
+			let conLis = document.querySelectorAll("#wrap .content li");
 			let len = navLis.length;
 			let index = 0;
+			
+			
+			for( let i = 0,len = datas.length ; i < len ; i++ ){  
+					//console.log(len);
+					let {type,src,description} = datas[i];
+					//console.log(conLis[i]);  不能用i，i是datas的长度，conLis会超出
+					conLis[type].innerHTML +=`<dl><dd><img src="${src}"/></dd><dt title="${description}">${description}</dt></dl>`;
+					//解构赋值，由于type是比较好判断的数字值，根据type分类做switch case的判断可以省略，用数组来代替
+			}
+
 			for( let i = 0 ; i < len ; i++ ){
+				//不用es6的解构赋值，用一般的方法
+				/*let strHtml ="";
+				for(let j = i*3; j <3*i+3 ; j++){
+						strHtml += `<dl><dd><img src="${datas[j].src}"/></dd><dt title="${datas[j].description}">${datas[j].description}</dt></dl>`;
+						conLis[i].innerHTML = strHtml;
+				}*/
+				
 				navLis[i].onmouseenter = function(){
 					navLis[index].classList.remove("active");
+					conLis[index].classList.remove("show");
 					index = i ;
 					this.classList.add("active");
+					conLis[index].classList.add("show");
 				}
 			}
-		}()
+		}([
+		{
+			id:0,
+			src:"images/img07.jpg",
+			type:0,
+			description:"邓伦遇见Bally，一切如愿以偿"
+		},
+		{
+			id:0,
+			src:"images/img04.jpg",
+			type:0,
+			description:'靠衣品"花样逆袭"？其实私底下的蒋欣比你想象的更'
+		},
+		{
+			id:0,
+			src:"images/img10.jpg",
+			type:0,
+			description:'"鬼马精灵"周冬雨做客「报料」'
+		},
+
+		{
+			id:1,
+			src:"images/img01.jpg",
+			type:1,
+			description:"金亚中时髦的职场穿搭术《名不虚传》！"
+		},
+		{
+			id:1,
+			src:"images/img02.jpg",
+			type:1,
+			description:'剧好看Vol.26：《“吃吃”的爱》小S、林志玲教你穿出时髦“少女样”！'
+		},
+		{
+			id:1,
+			src:"images/img03.jpg",
+			type:1,
+			description:"剧好看Vol.25：《不期而遇》“长腿御姐”张雨绮的撩人时尚经！"
+		},
+
+		{
+			id:2,
+			src:"images/img04.jpg",
+			type:2,
+			description:"靠衣品“花样逆袭”？其实私底下的蒋欣比你想象的更时髦！"
+		},
+		{
+			id:2,
+			src:"images/img05.jpg",
+			type:2,
+			description:"谁说郭碧婷只能当“初恋”？好气质的她不需要标签"
+		},
+		{
+			id:2,
+			src:"images/img06.jpg",
+			type:2,
+			description:"爱笑的女人不会老？陈意涵冻龄的秘诀大概就是这样！"
+		},
+
+		{
+			id:3,
+			src:"images/img07.jpg",
+			type:3,
+			description:"邓伦遇见Bally，一切如愿以偿"
+		},
+		{
+			id:3,
+			src:"images/img08.jpg",
+			type:3,
+			description:"金瀚行走巴黎，高冷外壳下的反转魅力太让人惊喜"
+		},
+		{
+			id:3,
+			src:"images/img09.jpg",
+			type:3,
+			description:"青春该有的样子，“彪悍”少年侯明昊的圣诞情书"
+		},
+
+		{
+			id:4,
+			src:"images/img10.jpg",
+			type:4,
+			description:'"鬼马精灵”周冬雨做客「报料」！'
+		},
+		{
+			id:4,
+			src:"images/img11.jpg",
+			type:4,
+			description:"两极分化的双子座代表谭松韵做客「报料」！"
+		},
+		{
+			id:4,
+			src:"images/img12.jpg",
+			type:4,
+			description:"没想到李溪芮最想合作的是TF老Boy!"
+		}
+		])
 	</script>
  </body>
 </html>
