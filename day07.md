@@ -74,6 +74,14 @@ arr.pop()(arr[0]);//输出？
   fn`stra${a+1}b${a+2}c`; // 等价于下面
   fn(["stra","b","c"],7,8);
 ```
+* 模板字符串还可以换行，${ }之中可以直接执行javascript代码
+```
+let obj = {x:10,y:20};
+let str = `<ul>
+  <li>${obj.x+11}</li>
+  <li>${obj.y+33}</li>
+</ul>`;
+```
 
 * 检测包含关系
 > str.includes(substr);// true or false  
