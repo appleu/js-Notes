@@ -40,7 +40,7 @@ console.log(strArr);// 变成一个人名数组
 //字符串的操作用的最多的是正则表达式，匹配字符串
 ```
 
-### array
+### array  [javascript API](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array "数组相关详细API")
 * push，改变原数组，向数组后面添加数据
 > 多个参数添加多个数据，arr.push(parameter1....2...parametern),返回数组长度
 
