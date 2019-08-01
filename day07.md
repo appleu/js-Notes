@@ -76,11 +76,18 @@ arr.pop()(arr[0]);//输出？
 ```
 
 * 检测包含关系
-> str.includes(substr);// true or false
-> str.includes(substr,start);// 指定开始位置
-> str.[start|end]Width(substr[,start]);//是否在原字符串的[头部|尾部]，可指定开始位置
-> str.rpeat(num);//返回新字符串，将原字符串重复num次；num负报错，有小数位舍弃，其他能转则转
-> "xx".padStart(2,"a"); // => "aaxx";
-> "xx".padEnd(2,"a");// => "xxaa";
-> 常用于时间，数位补全 (5+"").padStart(2,"0");//05
-> 年月日格式 “05-30”.padStart(10,"YYYY-MM-DD");//"YYYY-05-30"
+> str.includes(substr);// true or false  
+
+> str.includes(substr,start);// 指定开始位置  
+
+> str.[start|end]Width(substr[,start]);//是否在原字符串的[头部|尾部]，可指定开始位置  
+
+> str.rpeat(num);//返回新字符串，将原字符串重复num次；num负报错，有小数位舍弃，其他能转则转  
+
+> "xx".padStart(2,"a"); // => "aaxx";  
+
+> "xx".padEnd(2,"a");// => "xxaa";  
+
+> 常用于时间，数位补全 (5+"").padStart(2,"0");//05  
+
+> 年月日格式 “05-30”.padStart(10,"YYYY-MM-DD");//"YYYY-05-30"  
