@@ -99,3 +99,24 @@ let str = `<ul>
 > 常用于时间，数位补全 (5+"").padStart(2,"0");//05  
 
 > 年月日格式 “05-30”.padStart(10,"YYYY-MM-DD");//"YYYY-05-30"  
+
+* ... 操作符
+```JavaScript
+let a = [1,2,3,4,5];
+console.log(...a);//相当于 log(1,2,3,4,5);
+function fn(param){
+  console.log(param);
+}
+
+fn(...a);//相当于把数组a拆分成3个，传递了三个参数，输出1
+
+let b = [1,2,4];
+let c = [5,6,7];
+//let d = b.concat(c);
+let d = [...b,...c];//等同于concat
+
+// 等号右边数据有Iterator遍历器接口的都能使用解构赋值
+let [a,b] = [1,2,4,5];
+console.log(a+" "+b);//1 2
+let [c,...d] = [1,2,4,5];//
+console.log(a + " "+ b);// 1,[2,4,5]
