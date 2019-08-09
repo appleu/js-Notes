@@ -101,7 +101,7 @@ function  f() {
 document.onclick = f();//一个函数执行返回函数，触发点击事件后函数执行
 ```
 
-### 作用域
+### 作用域 
 > es5 和 es6
 ```javascript
 var a = 3;
