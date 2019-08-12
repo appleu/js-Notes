@@ -54,7 +54,7 @@ const rdm = (n,m)=>(m - n)\*Math.ruandom()+n; // 注意取值区间[n,m)
 //彩票系统 一等奖2%  二等奖10% 三等奖30%  谢谢参入     
 parseInt  parseFloat  不是数学对象，是window下的方法       
 parseInt(“123abc”);//返回字符串的整数部分，碰到非数字字符停止     
-parseInt(a,b);//a是需要转换的变量   b是进制(2,8,10,16,   其实可以36)
+parseInt(a,b);//a是需要转换的变量   b是进制(2,8,10,16比较常见   其实可以36)
 parseInt("zz",36);//1295  (数值 0-9 a-z  10个数字+26个字母，36)     
 进制的转换，如把10进制转换成2进制，怎么做     
 parseInt 和 parseFloat 先把传入的转换参数调用toString(),然后再转换，怎么验证
