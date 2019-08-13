@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Carousel figure</title>
+    <style>
+      html,body,div,p,ul,ol,h1,h2,h3{
+        margin:0;
+        padding:0;
+      }
+      body{
+        overflow:hidden;
+      }
+      ul,ol{
+        list-style:none;
+      }
+      #wrap{
+        position:relative;
+        margin:50px auto 20px;
+        width:500px;
+        height:376px;
+        text-align:center;
+        user-select:none;
+      }
+      #wrap .img{
+        position:relative;
+        width:100%;
+        height:100%;
+        overflow:hidden;
+      }
+      #wrap .img.showAll{
+        overflow:visible;
+      }
+      #wrap .img ul{
+        position:absolute;
+        top:0;
+        left:-400%;
+        width:1700%;
+        /* z-index:8888; */
+        transition:left .3s;
+      }
+      #wrap .img ul.noTransition{
+        transition:none;
+      }
+      #wrap .img ul li{
+        float:left;
+        width:500px;
+        height:376px;
+      }
+      #wrap .img ul li img{
+        width:100%;
+      }
+      #wrap .tab{
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        cursor:pointer;
+      }
+      #wrap .tab li{
+        float:left;
+        width:20%;
+        font-size:14px;
+        letter-spacing:.2em;
+        line-height:2rem;
+        text-align:center;
+        color:#fff;
+        background-color: #2c6abf;
+        /* background-color: rgba(255,0,3,.5); */
+        transition:color 2s;
+      }
+      #wrap .tab li.active{
+        /* background-color: #aaa; */
+        color:#f99;
+
+      }
+      #wrap .tab li::before{
+        position:absolute;
+        display:block;
+        width:100px;/*为0，下面给100，transition里不加 有点不同*/
+        color:#fff;
+        height:0px;
+        content:"";
+        transition:height 1.5s;
+        background-color: rgba(200,200,200,.3);
+      }
+      #wrap .tab li.active::before{
+        /* width:100px; *//*给100px，transition没有动画，去掉回退的效果*/
+        height:32px;
+      }
+      #btn div{
+        position:absolute;
+        top:0;
+        bottom:0;
+        margin:auto 0;
+        width:30px;
+        height:20px;
+        border-radius:20%;
+        line-height:20px;
+        text-align:center;
+        font-size:20px;
+        font-weight:bolder;
+        cursor:pointer;
+        color:#fff;
+        background-color: rgba(0,0,0,0);
+      }
+      #btn div.pre{
+        left:-8px;
+      }
+      #btn div.pre::before{
+        display:block;
+        position:absolute;
+        top:-8px;
+        left:-8px;
+        content:"";
+        border:16px solid transparent;
+        border-right-color:rgba(51,122,183,1);
+
+      }
+
+      #btn div.next{
+        right:-8px;
+      }
+
+      #btn div.next::before{
+        display:block;
+        position:absolute;
+        top:-8px;
+        right:-8px;
+        content:"";
+        border:16px solid transparent;
+        border-left-color:rgba(51,122,183,1);
+      }
+
+      #debugging{
+        display:inline-block;
+        margin:0 auto;
+        padding:6px 12px;
+        font-size:14px;
+        font-weight:400;
+        line-height:1.5;
+        text-align:center;
+        color:#fff;
+        background-color: #337ab7;
+        border:1px solid #2e6da4;
+        border-radius:4px;
+        cursor:pointer;
+        user-select:none;
+      }
+      #debugging:hover{
+        background-color: #286090;
+        border-color: #204d74;
+      }
+
+      #wrap .masking{
+        position:absolute;
+        width:400%;
+        height:100%;
+        z-index:9999;
+        background-color: rgba(0,0,0,.5);
+      }
+      #wrap .hide{
+        display:none;
+      }
+      #wrap .masking-left{
+        left:-400%;
+      }
+      #wrap .masking-right{
+        right:-400%;
+      }
+
+      #txtExplain{
+        margin:1rem auto;
+        width:500px;
+        height:3rem;
+        line-height:2;
+        text-align:center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="masking masking-left hide"></div>
+      <div class="masking masking-right hide"></div>
+      <div class="img">
+        <ul>
+          <li><img src="images/img02.jpg" alt=""></li>
+          <li><img src="images/img03.jpg" alt=""></li>
+          <li><img src="images/img04.jpg" alt=""></li>
+<li><img src="images/img05.jpg" alt=""></li>
+          <li ><img src="images/img01.jpg" alt=""></li>
+          <li><img src="images/img02.jpg" alt=""></li>
+          <li><img src="images/img03.jpg" alt=""></li>
+          <li><img src="images/img04.jpg" alt=""></li>
+          <li><img src="images/img05.jpg" alt=""></li>
+<li ><img src="images/img01.jpg" alt=""></li>
+          <li><img src="images/img02.jpg" alt=""></li>
+          <li><img src="images/img03.jpg" alt=""></li>
+          <li><img src="images/img04.jpg" alt=""></li>
+
+        </ul>
+      </div>
+      <ul class="tab">
+        <li class="active">职场穿搭</li>
+        <li>剧好看</li>
+        <li>不期而遇</li>
+        <li>报尚名来</li>
+        <li>海报时尚</li>
+      </ul>
+        <div id="btn">
+          <div class="pre"></div>
+          <div class="next"></div>
+        </div>
+    </div>
+    <div style="text-align:center;">
+    <div id="debugging">显示/隐藏超出的轮播图</div>
+    </div>
+    <div id="txtExplain">
+      原生js，用了些es6新语法，代码没有做太多优化...
+    </div>
+
+    <script type="text/javascript">
+    ~function(){
+      let btns = document.querySelectorAll('#btn div'),
+      aTabs = document.querySelectorAll("#wrap .tab li"),
+      oUl = document.querySelector('.img ul'),
+      oWrap = document.getElementById("wrap"),
+      len = aTabs.length,
+      timer = null,
+      lastInd = idx = 0;//上一个样式，idx保存操作的aTabs下标
+
+      //事件函数
+      function moveLeft(ind){
+        oUl.classList.remove("noTransition");
+        aTabs[lastInd].classList.remove('active');
+        if( ind >= len  ){//left ind + 1 是因为首尾增加了两种图，当达到最后一张oUl要往继续左移，aTabs的li要回到0
+          oUl.style.left = "-"+(ind+4)*100+"%";
+          idx = ind = 0;  //
+          lastInd = ind;
+          aTabs[lastInd].classList.add('active');
+          setTimeout(()=>{
+            oUl.classList.add('noTransition');
+            oUl.style.left = "-"+400+"%";
+         },330)
+       }else if( ind < 0 ){
+         oUl.style.left = "-"+300+"%";//因为前面加了4张图所以是300
+         idx = ind = len-1;
+         lastInd = ind;
+         aTabs[lastInd].classList.add('active');
+         setTimeout(()=>{
+           oUl.classList.add("noTransition");
+           //oUl.style.left = "-"+(len+1)*100+"%";//不能是len+1，+1hi最后一张重复
+           oUl.style.left = "-"+(len+3)*100+"%";
+           //前后都加了4张图，当往右点击最后一张图时切换到尾部注意+3
+         },330)
+       }else{
+          idx = lastInd = ind;
+          aTabs[lastInd].classList.add('active');
+          oUl.style.left = "-"+(ind+4)*100+"%";
+       }
+      }
+
+      //下方点击切换事件
+      [...aTabs].forEach((el,ind) =>{
+        el.onclick = () =>{
+          moveLeft(ind);
+        }
+      });
+
+      //左右点击切换事件
+      [...btns].forEach(function(el,ind){
+        el.onclick = () =>{
+          ind > 0 ? moveLeft( lastInd+1 ) : moveLeft( lastInd - 1 )
+        }
+      })
+
+      //自动轮播
+      timer = setInterval(()=>{
+        console.log(idx);
+        idx%=(len+1);
+        //moveLeft(idx++);//放到里面后++并不会++成功，定时器一直是0
+        moveLeft(++idx);
+      },2000);
+
+    //鼠标移入移出事件
+    oWrap.onmouseenter = ()=>{clearInterval(timer)}
+    oWrap.onmouseleave = ()=>{timer = setInterval(()=>{
+      idx%=(len+1);
+      moveLeft(++idx);
+    },2000)}
+
+    //显示隐藏超出的轮播图
+    document.getElementById("debugging").onclick = ()=>{
+      document.getElementsByClassName("img")[0].classList.toggle("showAll");
+      [...document.querySelectorAll("#wrap .masking")].forEach((el)=>{el.classList.toggle("hide")});
+  }
+   }()
+    </script>
+  </body>
+</html>
