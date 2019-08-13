@@ -234,25 +234,25 @@
       function moveLeft(ind){
         oUl.classList.remove("noTransition");
         aTabs[lastInd].classList.remove('active');
-        if( ind >= len  ){//left ind + 1 是因为首尾增加了两种图，当达到最后一张oUl要往继续左移，aTabs的li要回到0
-          oUl.style.left = "-"+(ind+4)*100+"%";
+        if( ind >= len  ){//
+          oUl.style.left = "-"+(ind+4)*100+"%";//
           idx = ind = 0;  //
           lastInd = ind;
           aTabs[lastInd].classList.add('active');
           setTimeout(()=>{
             oUl.classList.add('noTransition');
-            oUl.style.left = "-"+400+"%";
+            oUl.style.left = "-"+400+"%";//总图片数-len-增加用来铺垫的图片/2
          },330)
        }else if( ind < 0 ){
-         oUl.style.left = "-"+300+"%";//因为前面加了4张图所以是300
+         oUl.style.left = "-"+300+"%";//左右铺垫图/2 - 1
          idx = ind = len-1;
          lastInd = ind;
          aTabs[lastInd].classList.add('active');
          setTimeout(()=>{
            oUl.classList.add("noTransition");
-           //oUl.style.left = "-"+(len+1)*100+"%";//不能是len+1，+1hi最后一张重复
+           //oUl.style.left = "-"+(len+1)*100+"%";//不能是len+1，
            oUl.style.left = "-"+(len+3)*100+"%";
-           //前后都加了4张图，当往右点击最后一张图时切换到尾部注意+3
+           //len的长度5 + 增加的铺垫图/2 - 1，隔左边-800%，让末尾倒数第4章图显示
          },330)
        }else{
           idx = lastInd = ind;
