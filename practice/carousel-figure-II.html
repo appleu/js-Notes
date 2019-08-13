@@ -177,6 +177,21 @@
         text-align:center;
       }
 
+      #txtExplain .lucky{
+        /* display:none; */
+        text-align:center;
+        font-size:50px;
+        font-weight:bolder;
+        color:#f00;
+        /* transform:rotate(0deg); */
+        transition:transform 2s ease-in-out,font-size 2s ease-in-out,color 2s ease-in-out;
+      }
+      #txtExplain .lucky.on{
+        /* display:block; */
+        transform:rotate(223deg);
+        font-size:255px;
+        color:transparent;
+      }
     </style>
   </head>
   <body>
@@ -218,6 +233,10 @@
     </div>
     <div id="txtExplain">
       原生js，用了些es6新语法，代码没有做太多优化...
+      <p></p>
+      <p class="lucky">
+        福
+      </p>
     </div>
 
     <script type="text/javascript">
@@ -295,7 +314,28 @@
       document.getElementsByClassName("img")[0].classList.toggle("showAll");
       [...document.querySelectorAll("#wrap .masking")].forEach((el)=>{el.classList.toggle("hide")});
   }
-   }()
+
+  let newYear = new Date(2020,0,24);
+  let dom = document.querySelector("#txtExplain p");
+  let lucky = document.querySelector("#txtExplain .lucky");
+  function countdown(){
+    let now = new Date();
+    let day = Math.floor((newYear - now)/1000/60/60/24),
+    hours = Math.floor((newYear - now)/1000/60/60%24),
+    minutes = Math.floor((newYear - now)/1000/60%60),
+    seconds = Math.floor((newYear - now)/1000%60);
+    hours = hours < 10 ? "0"+ hours : hours;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    dom.innerHTML = `距离2020年<span style="color:#f00;font-weight:bolder;">除夕</span>还有<span style='color:#f36;font-weight:bolder'>${day}</span>天<span style='color:#f36;font-weight:bolder'>${hours}</span>小时<span style='color:#f36;font-weight:bolder'>${minutes}</span>分钟<span style='color:#f36;font-weight:bolder'>${seconds}</span>秒`;
+  }
+/*  setInterval(()=>{
+    lucky.classList.toggle("on");
+  },2000)*/
+  countdown();
+  setInterval( () => { countdown(); },1000 );
+
+ }()
     </script>
   </body>
 </html>
