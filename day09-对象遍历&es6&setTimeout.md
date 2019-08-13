@@ -1,4 +1,4 @@
-# 对象遍历
+# 对象  JSON es6 setTimeout   Date
 < object遍历和数组不同     
 ```javascript
 let m = {
@@ -107,3 +107,27 @@ if(!window.requestAnimationFrame){
 //简写
 window.requestAnimationFrame = window.requestAnimationFrame || function (f){return setTimeout(f,1000/60)};
 window.cancelAnimationFrame = window.requestAnimationFrame || clearTimeout;
+```
+* Date,javascript时间对象
+```JavaScript
+let t = new Date();//不带参数获取当前时间戳  是当前的电脑系统时间  中国是东8区，格林威治时间+8小时
+let s = new Date(2020,2,2,2,2,2);// 日期是从0开始，2的话其实是3月
+//设置时间戳，最少带两个参数，只带一个参数，会被当成毫秒数，然后函数是把这个毫秒数+1970年1月1日8点0分0秒+这个毫秒数
+let time = t.getTime();//获取从1970年1月1日0点0分0秒到现在(t)时间戳的毫秒数
+t.getFullYear();
+t.getMonth();
+t.getDate();
+t.getDay();//0~6,0是周日
+t.getHours();
+t.getMinutes();
+t.getSeconds();
+t.getMilliseconds();
+
+let pre = new Date();
+setInterval(()=>{
+  let now = new Date();
+  console.log(now - pre);
+  pre = now;
+},50)//定时器的误差问题，不是十分准确
+
+//倒计时功能
