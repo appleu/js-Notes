@@ -26,4 +26,4 @@ console.log(oDiv.childNodes);//这个div其实有3个子节点
 ```
 > > 文本节点创建加入到父元素里，即添加了文字，也不会像innerHTML或者innerText那样影响到兄弟元素，比如innerHTML兄弟元素的注册事件依然在,有些时候可以少创建一个页面标签等      
 * 节点关系图     
- <div align="center"> ![节点关系图](https://github.com/appleu/js-Notes/blob/master/practice/images/node.png?raw=true "小肖") </div>
+ <div style="align:center"> ![节点关系图](https://github.com/appleu/js-Notes/blob/master/practice/images/node.png?raw=true "小肖") </div>
