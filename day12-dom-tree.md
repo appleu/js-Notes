@@ -18,7 +18,7 @@
 | DTD声明节点       | 12    | 符号名称       | null              | xml |     |
 * 属性节点包含在元素节点里面，通过dir可查看，注意textNode，被元素节点隔开的有空格的和换行的都会算一个
 > \<div id="box"\>        
-    nihao<p> </p>      
+    nihao\<p\> \</p\>      
   \</div\>      
 ```javascript
 let oDiv = document.getElementById("box");
