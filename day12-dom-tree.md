@@ -26,4 +26,11 @@ console.log(oDiv.childNodes);//这个div其实有3个子节点
 ```
 > > 文本节点创建加入到父元素里，即添加了文字，也不会像innerHTML或者innerText那样影响到兄弟元素，比如innerHTML兄弟元素的注册事件依然在,有些时候可以少创建一个页面标签等      
 * 节点关系图     
-  ![节点关系图](https://github.com/appleu/js-Notes/blob/master/practice/images/node.png?raw=true "小肖") 
+  ![节点关系图](https://github.com/appleu/js-Notes/blob/master/practice/images/node.png?raw=true "小肖")
+* 常用方法       
+> elementNode nodeValue是为null，而不是中间的文字或者包含的标签，input的value也不是input标签的nodeValue，二是eleAttribute value的NnodeValue,
+textNode的nodeValue就是文本内容 。       
+childNodes 一级子节点集合  children 一级子元素 ，获取一个元素下所有子节点需要自己写递归函数       
+> 增         
+> > 1 sonNode = document.createElement("p")/createTextNode("hello")/createComment("")                 
+    2 parentNode。appendChild(sonNode)  
