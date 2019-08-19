@@ -44,4 +44,12 @@ childNodes 一级子节点集合  children 一级子元素 ，获取一个元素
         parent1.appendChild(son2);
         parent2.appendChild(son1);
         //节点的唯一性，从父节点消失，出现在另外一个地方，交换位置，事件不收影响，但css的话可能会有所改变          
-        ```
+        ```          
+> getAttributeNode 获取指定属性节点          
+document.createAtrribute('aName') 创建指定名称属性节点      
+setAttributeNode 向元素中添加属性节点        
+> firstChild / firstElementChild 第一个子节点        
+ele.firstChild 只读属性，标准下会包含文本节点，非标准下只包含元素节点              
+ele.firstElementChild 只读属性，标准下获取第一个元素类型节点，非标准下无           
+lastChild / lastElementChild  nextSibling / nexElementSibling  previousSibling ...兼容性同上              
+parentNode / offsetParent(最近定位)    childElementCount 子节点数量 
