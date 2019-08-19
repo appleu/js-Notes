@@ -33,4 +33,14 @@ textNode的nodeValue就是文本内容 。
 childNodes 一级子节点集合  children 一级子元素 ，获取一个元素下所有子节点需要自己写递归函数       
 > 增         
 > > 1 sonNode = document.createElement("p")/createTextNode("hello")/createComment("")                 
-    2 parentNode。appendChild(sonNode)  
+    2 parentNode.appendChild(sonNode)     parentNode.insertBefore(sonNode,targetele)//目标子节点之前,如果父元素没有子节点目标节点undefined也可以      
+    > 删         
+    > > 1 sonNode = document.querySelector 获取要删除的节点  parent = sonNode.parentNode 获取父节点                 
+        2 parent.remove(sonNode);//删除之后还可以再添加到其他地方，因为此时节点的变量还保存在内存中  otherEle.appendChild(sonNode)       
+        ```javascript
+        son1 = parent1.child;
+        son2 = parent2.child;
+        parent1.appendChild(son2);
+        parent2.appendChild(son1);
+        //节点的唯一性，从父节点消失，出现在另外一个地方，交换位置，事件不收影响，但css的话可能会有所改变        
+        ```
