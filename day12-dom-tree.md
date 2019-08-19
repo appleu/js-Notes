@@ -36,7 +36,7 @@ childNodes 一级子节点集合  children 一级子元素 ，获取一个元素
     2 parentNode.appendChild(sonNode)     parentNode.insertBefore(sonNode,targetele)//目标子节点之前,如果父元素没有子节点目标节点undefined也可以      
     > 删         
     > > 1 sonNode = document.querySelector 获取要删除的节点  parent = sonNode.parentNode 获取父节点                 
-        2 parent.remove(sonNode);//删除之后还可以再添加到其他地方，因为此时节点的变量还保存在内存中  otherEle.appendChild(sonNode)       
+        2 parent.remove(sonNode);//删除之后还可以再添加到其他地方，因为此时节点的变量还保存在内存中  otherEle.appendChild(sonNode)               
         ```javascript
         son1 = parent1.child;
         son2 = parent2.child;
