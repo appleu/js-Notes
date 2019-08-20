@@ -52,4 +52,4 @@ setAttributeNode 向元素中添加属性节点
 ele.firstChild 只读属性，标准下会包含文本节点，非标准下只包含元素节点              
 ele.firstElementChild 只读属性，标准下获取第一个元素类型节点，非标准下无           
 lastChild / lastElementChild  nextSibling / nexElementSibling  previousSibling ...兼容性同上              
-parentNode / offsetParent(最近定位)    childElementCount 子节点数量 
+parentNode / offsetParent(最近定位)    childElementCount 子节点数量            
