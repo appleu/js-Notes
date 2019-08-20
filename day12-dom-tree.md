@@ -53,3 +53,5 @@ ele.firstChild 只读属性，标准下会包含文本节点，非标准下只�
 ele.firstElementChild 只读属性，标准下获取第一个元素类型节点，非标准下无           
 lastChild / lastElementChild  nextSibling / nexElementSibling  previousSibling ...兼容性同上              
 parentNode / offsetParent(最近定位)    childElementCount 子节点数量            
+let clone = ele.cloneNode([true]) parent.appendChild(clone)带true参数，clone会复制元素里的所有节点(不包含事件)，否则就复制他自身不包含他的子节点         
+replaceChild(new old)
